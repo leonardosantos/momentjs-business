@@ -14,8 +14,8 @@
     var start_offset = start.day() - 7;
     var end_offset = end.day();
 
-    var end_sunday = end.clone().subtract('d', end_offset).startOf('day');
-    var start_sunday = start.clone().subtract('d', start_offset).startOf('day');
+    var end_sunday = end.clone().subtract(end_offset, 'days').startOf('day');
+    var start_sunday = start.clone().subtract(start_offset, 'days').startOf('day');
     var weeks = end_sunday.diff(start_sunday, 'days') / 7;
 
     start_offset = Math.abs(start_offset);
@@ -34,10 +34,10 @@
   };
 
   moment.fn.businessAdd = function (days) {
-    var d = this.clone().add('d', Math.floor(days / 5) * 7);
+    var d = this.clone().add(Math.floor(days / 5) * 7, 'days');
     var remaining = days % 5;
     while(remaining){
-      d.add('d', 1);
+      d.add(1, 'days');
       if(d.day() !== 0 && d.day() !== 6)
         remaining--;
     }
