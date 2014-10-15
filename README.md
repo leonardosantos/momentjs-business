@@ -15,4 +15,4 @@ Usage
 -----
 
     moment().businessAdd(7);
-    moment().businessDiff(moment().subtract('d', 7));
+    moment().businessDiff(moment().subtract(7, 'd'));
