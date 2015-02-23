@@ -16,8 +16,8 @@
     var start_offset = start.day() - 7;
     var end_offset = end.day();
 
-    var end_sunday = end.clone().subtract('d', end_offset);
-    var start_sunday = start.clone().subtract('d', start_offset);
+    var end_sunday = end.clone().subtract(end_offset, 'd');
+    var start_sunday = start.clone().subtract(start_offset, 'd');
     var weeks = end_sunday.diff(start_sunday, 'days') / 7;
 
     start_offset = Math.abs(start_offset);
