@@ -40,7 +40,7 @@
     days = Math.abs(days);
     var d = this.clone().add(Math.floor(days / 5) * 7 * signal, 'd');
     var remaining = days % 5;
-    while(remaining){
+    while(remaining > 0){
       d.add(signal, 'd');
       if(d.day() !== 0 && d.day() !== 6)
         remaining--;
