@@ -1,0 +1,15 @@
+{
+  "name": "momentjs-business",
+  "main": "momentjs-business.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/leonardosantos/momentjs-business",
+  "description": "MomentJS extension for business days calculations",
+  "keywords": [
+    "momentjs",
+    "business"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ]
+}
