@@ -8,7 +8,7 @@
   moment = (typeof require !== "undefined" && require !== null) &&
            !require.amd ? require("moment") : this.moment;
 
-  moment.fn.businessDiff = function (param) {
+  moment.fn.businessDiff = function (param, float) {
     param = moment(param);
     var signal = param.unix() < this.unix()?1:-1;
     var start = moment.min(param, this).clone();
@@ -18,7 +18,7 @@
 
     var end_sunday = end.clone().subtract('d', end_offset);
     var start_sunday = start.clone().subtract('d', start_offset);
-    var weeks = end_sunday.diff(start_sunday, 'days') / 7;
+    var weeks = end_sunday.diff(start_sunday, 'days', !!float) / 7;
 
     start_offset = Math.abs(start_offset);
     if(start_offset == 7)
